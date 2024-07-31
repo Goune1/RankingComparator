@@ -17,6 +17,7 @@ export default function RootLayout({
 }>) {
   return (
     <html lang="fr">
+      <link rel="icon" href="/ballon.png" />
       <body className={GeistSans.className}>{children} <Analytics /></body>
     </html>
   );
