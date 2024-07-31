@@ -120,10 +120,8 @@ export default function Home() {
     <div className="min-h-screen bg-gray-100">
       <div className="pt-36">
         <h1 className="text-center text-4xl lg:text-6xl tracking-tight font-bold p-4">Comparez le palmarès</h1>
-        {bestPlayer && (
-          <h1 className='text-center text-xl lg:text-2xl font-semibold tracking-tight px-8'>Le joueur avec le meilleur palmarès est : {bestPlayer}</h1>
-        )}
-        <div className='pt-12 pb-36'>
+        
+        <div className='pt-8 pb-36'>
           <div className='flex flex-col md:flex-row items-center justify-center gap-x-16 lg:gap-x-36'>
             <form onSubmit={(e) => handleSubmit(e, player1Query, setPlayer1, setPlayer1Achievements, setPlayer1SearchDone, setPlayer1DataLoaded)} className="mb-4 flex gap-4">
               <Input className='border-black' type='text' value={player1Query} onChange={(e) => setPlayer1Query(e.target.value)} placeholder="Nom du premier joueur" />
@@ -134,7 +132,9 @@ export default function Home() {
               <Button type='submit'>Rechercher</Button>
             </form>
           </div>
-          
+          {bestPlayer && (
+            <h1 className='text-center text-xl lg:text-2xl font-semibold tracking-tight px-8'>Le joueur avec le meilleur palmarès est : {bestPlayer}</h1>
+          )}
           <div className='flex flex-col md:flex-row items-stretch justify-center gap-8 p-4'>
             {player1SearchDone && player1DataLoaded && (
               <Card className='bg-gray-300 w-[350px] lg:w-[500px] min-h-[400px] flex flex-col'>
